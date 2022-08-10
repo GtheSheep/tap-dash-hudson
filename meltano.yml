@@ -1,0 +1,26 @@
+version: 1
+send_anonymous_usage_stats: true
+project_id: "tap-dash-hudson"
+plugins:
+  extractors:
+  - name: "tap-dash-hudson"
+    namespace: "tap_dash_hudson"
+    pip_url: -e .
+    capabilities:
+    - state
+    - catalog
+    - discover
+    config:
+      brand_id: 
+      api_key: ""
+      start_date: '2016-12-01T00:00:00Z'
+    settings:
+    - name: brand_id
+    - name: api_key
+      kind: password
+    - name: start_date
+      value: '2016-12-01T00:00:00Z'
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
