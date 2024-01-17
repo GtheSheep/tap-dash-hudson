@@ -16,7 +16,7 @@ class PinterestBackendStream(DashHudsonStream):
 class PinterestAccountStream(PinterestBackendStream):
     name = "pinterest_account"
     path = "/brands/{brand_id}/account"
-    primary_keys = ["id"]
+    primary_keys = ["pinterest_account_id"]
     replication_key = None
     schema = th.PropertiesList(
         th.Property("id", th.NumberType),
